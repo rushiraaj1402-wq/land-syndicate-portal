@@ -76,7 +76,7 @@ export const SYNDICATE_MANDATES: Mandate[] = [
     statusBadge: 'MANDATE EXECUTED - SALE DEED REGISTERED',
     statusColor: 'emerald',
     dealStructure: 'Private Bilateral Acquisition via In-House Farmer Holding',
-    titleAuditRef: 'HC-SRCH-2024-GJ-8841 (Clear 34-Year Search)',
+    titleAuditRef: 'SR-AUD-2024-GJ-8841 (Clear 35-Year Sub-Registrar Search)',
     zoning: 'Final Non-Agricultural (NA) Industrial Order Section 65',
     completionQuarter: 'Q3 2024',
     highlights: [
@@ -97,7 +97,7 @@ export const SYNDICATE_MANDATES: Mandate[] = [
     zoning: 'Designated Industrial Logistics (Town Planning Scheme Approved)',
     completionQuarter: 'Active Private Placement',
     highlights: [
-      'Zero Gujarat Revenue Tribunal (GRT) or Special Civil Application (SCA) encumbrance across all title sheets.',
+      'Zero revenue encumbrance or pending statutory dispute across all AnyRoR and 7/12 title sheets.',
       'Direct 45-meter DP planned arterial road approach with zero agricultural easement encumbrance.',
       'Full indemnification structure backed by Senior Counsel title guarantee certificate.'
     ]
@@ -114,7 +114,7 @@ export const SYNDICATE_MANDATES: Mandate[] = [
     zoning: 'Heavy Engineering Industrial Zone (GPCB Orange Category Clearance)',
     completionQuarter: 'Q1 2024',
     highlights: [
-      'Comprehensive 32-year title trail traced across old taluk registers without missing mutation links.',
+      'Comprehensive 35-year title trail traced across old taluk registers without missing mutation links.',
       'Immediate 66kV industrial high-tension tap clearance secured from PGVCL divisional engineer.',
       'Acquisition delivered 18% under prevailing market speculative broker quotes through direct agrarian buyouts.'
     ]
@@ -148,14 +148,14 @@ export const AUDIT_TIERS: AuditStep[] = [
   },
   {
     tierNumber: 3,
-    title: 'High Court & Revenue Tribunal Litigation Search',
-    statutoryScope: 'Civil Procedure Code, 1908 & Gujarat Land Revenue Rules',
-    primaryRiskMitigated: 'Concealed lis pendens, interim injunctions, co-sharer partition suits, arbitration attachments, and pending GRT revision applications.',
-    clearingAuthority: 'Gujarat High Court, City Civil Courts, Taluk Senior Civil Judge, & Revenue Divisional Commissioner.',
+    title: '30-Year Sub-Registrar & Revenue Encumbrance Search',
+    statutoryScope: 'Registration Act, 1908 & Gujarat Land Revenue Code, 1879',
+    primaryRiskMitigated: 'Concealed lis pendens, undisclosed registered agreements to sell (Banakhat), unregistered family claims, and AnyRoR mutation irregularities.',
+    clearingAuthority: 'Sub-Registrar Offices (Index-II), Mamlatdar E-Dhara Kendra, & District Collectorate Revenue Branch.',
     deliverables: [
-      '30-to-35 Year Title Search Report signed by Senior Legal Counsel (32+ Years Bar Experience).',
-      'Search across Sub-Registrar Index-II registers for undeclared registered agreements to sell (Banakhat).',
-      'Mandatory Public Legal Notice in vernacular (Sandesh / Gujarat Samachar) and national dailies with 14-day objection window.'
+      '30-to-35 Year Title Search Report signed by Senior Legal Counsel (36+ Years Practice • Sanad 1990).',
+      'Exhaustive search across Sub-Registrar Index-II registers for any undeclared registered transactions or agreements.',
+      'Mandatory Public Legal Notice in vernacular (Sandesh / Gujarat Samachar) and national dailies with 14-day statutory objection window.'
     ]
   },
   {
@@ -175,15 +175,15 @@ export const AUDIT_TIERS: AuditStep[] = [
 export const INSTITUTIONAL_PILLARS = [
   {
     id: 'counsel',
-    title: '32-Year Senior Counsel Litigation Clearing',
+    title: 'Senior Legal Counsel (36+ Years Practice • Sanad 1990)',
     subtitle: 'Institutional Legal Moat',
-    description: 'Every parcel audited by senior bar advocates with over three decades in Gujarat High Court and Gujarat Revenue Tribunal (GRT). We eliminate disguised lis pendens, undisclosed banakhats, and family partition claims before you execute an LOI.',
+    description: 'Every parcel audited by Senior Legal Counsel with over 36 years of continuous practice (Sanad 1990, Bar Council of Gujarat) specializing strictly in land revenue documentation, title verification, and encumbrance auditing. We eliminate undisclosed banakhats, AnyRoR ferfar defects, and tenancy hurdles before capital is committed.',
     badge: 'Senior Bar Audit',
-    metrics: 'Zero Post-Closing Litigation in 12 Years',
+    metrics: '100% Clear Marketable Title & 30-Year Encumbrance Audit',
     keyPoints: [
       'Complete Sub-Registrar Index-II digital & manual ledger search',
-      'Exhaustive Vanshavali (lineage) tracing with sworn family indemnities',
-      'Certified Legal Opinion issued with full professional indemnity backing'
+      'Exhaustive Vanshavali (lineage) tracing with AnyRoR 7/12 mutation reconstruction',
+      'Certified Title Clearance Certificate issued prior to commercial commitment'
     ]
   },
   {

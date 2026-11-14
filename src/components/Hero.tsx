@@ -29,7 +29,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenIntakeModal: _onOpenIntakeModa
           </h1>
 
           <p className="text-lg sm:text-2xl text-[#334155] leading-relaxed font-light mb-10 max-w-3xl">
-            <span className="font-medium text-[#0F172A]">32-Year Senior Title Counsel. Ex-Assembly Revenue Liaison.</span> Pre-vetted agrarian parcels (1 to 50+ Acres) for corporate manufacturing, family trusts, and institutional capital.
+            <span className="font-medium text-[#0F172A]">Senior Legal Counsel (36+ Years Practice &bull; Sanad 1990). Ex-Assembly Revenue Liaison.</span> Pre-vetted agrarian parcels (1 to 50+ Acres) for corporate manufacturing, family trusts, and institutional capital.
           </p>
 
           {/* Primary Action Button */}
@@ -63,20 +63,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenIntakeModal: _onOpenIntakeModa
               <Scale className="w-4 h-4 text-[#B45309]" />
             </div>
             <div className="font-serif-institutional text-3xl font-bold text-[#0F172A]">
-              32+ <span className="text-sm font-sans font-normal text-[#64748B]">Years</span>
+              35+ <span className="text-sm font-sans font-normal text-[#64748B]">Years</span>
             </div>
-            <p className="text-xs text-[#64748B] mt-1 font-mono">Gujarat High Court chain audit</p>
+            <p className="text-xs text-[#64748B] mt-1 font-mono">Comprehensive 30-Year Title Search & Registry Audit</p>
           </div>
 
           <div className="p-5 bg-[#FFFFFF] border border-[#E2DFD7] rounded-sm shadow-xs">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-[11px] font-mono uppercase tracking-wider text-[#64748B]">Injunction Record</span>
+              <span className="text-[11px] font-mono uppercase tracking-wider text-[#64748B]">Encumbrance Record</span>
               <ShieldCheck className="w-4 h-4 text-[#064E3B]" />
             </div>
             <div className="font-serif-institutional text-3xl font-bold text-[#064E3B]">
-              Zero <span className="text-sm font-sans font-normal text-[#64748B]">Disputes</span>
+              100% <span className="text-sm font-sans font-normal text-[#64748B]">Clear Title</span>
             </div>
-            <p className="text-xs text-[#64748B] mt-1 font-mono">100% clean closing track record</p>
+            <p className="text-xs text-[#64748B] mt-1 font-mono">100% Clear Marketable Title & 30-Year Encumbrance Audit</p>
           </div>
 
           <div className="p-5 bg-[#FFFFFF] border border-[#E2DFD7] rounded-sm shadow-xs">

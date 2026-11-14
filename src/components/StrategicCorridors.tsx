@@ -44,7 +44,7 @@ export const StrategicCorridors: React.FC<StrategicCorridorsProps> = ({ onSelect
       fullName: 'Mehsana Industrial Belt',
       scaleLabel: 'Micro (4,000 - 12,000 sq.m) to Mega (35 Acres)',
       connectivity: 'WDFC Dedicated Freight Siding & SH-41',
-      statutory: '32-Year Clean Title Chain',
+      statutory: '30-Year Continuous Registry Chain',
       badge: 'Machinery Corridor'
     }
   ];

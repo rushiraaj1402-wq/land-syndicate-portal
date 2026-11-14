@@ -167,7 +167,7 @@ Reference: ${referenceId || 'LSC-DIRECT-APPLICATION'}
 - Execution Window: ${formData.timeline}
 
 *3. Confidentiality Protocol*
-- Status: NCNDA Confirmed (Gujarat High Court Jurisdiction)
+- Status: NCNDA Confirmed (Ahmedabad Legal Jurisdiction)
 ----------------------------------------
 Transmitted directly to Syndicate Legal & Revenue Desk.`;
   };
@@ -423,7 +423,7 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
                 className="mt-1 h-4 w-4 rounded border-[#CBD5E1] text-[#0F172A] focus:ring-[#0F172A]"
               />
               <span className="text-xs text-[#334155] leading-relaxed">
-                <strong className="text-[#0F172A]">Syndicate Bilateral NCNDA Confirmation:</strong> I confirm this mandate is initiated on behalf of an authorized corporate principal, family trust, or private investor. All off-market survey details and title search certificates shared by Land Syndicate Consulting shall remain strictly confidential under Gujarat High Court advisory jurisdiction.
+                <strong className="text-[#0F172A]">Syndicate Bilateral NCNDA Confirmation:</strong> I confirm this mandate is initiated on behalf of an authorized corporate principal, family trust, or private investor. All off-market survey details and title search certificates shared by Land Syndicate Consulting shall remain strictly confidential under Ahmedabad Legal Jurisdiction.
               </span>
             </label>
             {errors.ncndaAgreed && <p className="text-[11px] text-red-600 mt-2">{errors.ncndaAgreed}</p>}
@@ -467,7 +467,7 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
                   Reference: {referenceId}
                 </h4>
                 <p className="text-xs text-[#334155] mt-1">
-                  Your acquisition mandate has been registered according to Gujarat High Court & Revenue title protocols. Proceed to dispatch directly to Senior Counsel or copy the formatted dossier.
+                  Your acquisition mandate has been registered according to statutory Land Revenue title protocols. Proceed to dispatch directly to Senior Legal Counsel chambers or copy the formatted dossier.
                 </p>
               </div>
             </div>
@@ -508,7 +508,7 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
 
           <div className="text-center pt-2">
             <span className="text-[11px] font-mono text-[#64748B]">
-              Direct Counsel Liaison: +91 99099 23832 &bull; Gujarat Chambers / SG Highway Corridor
+              Direct Counsel Liaison: +91 99099 23832 &bull; Senior Legal Counsel Chambers / SG Highway Corridor
             </span>
           </div>
         </div>

@@ -73,7 +73,7 @@ export function App() {
                 Initiate Land Acquisition Mandate
               </h2>
               <p className="text-[#475569] text-base font-light mt-3">
-                Corporate Manufacturing, Family Trusts & Private Wealth. Complete the qualification below to receive certified High Court title search reports and registered off-market option dockets.
+                Corporate Manufacturing, Family Trusts & Private Wealth. Complete the qualification below to receive certified 30-year Sub-Registrar title search reports and registered off-market option dockets.
               </p>
             </div>
 

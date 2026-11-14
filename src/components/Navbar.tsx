@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenIntakeModal }) => {
           <div className="hidden sm:flex items-center gap-4">
             <div className="hidden lg:flex items-center gap-1.5 text-xs font-mono text-[#475569] px-2.5 py-1 bg-[#F4F2EE] border border-[#E2DFD7] rounded-sm">
               <Shield className="w-3.5 h-3.5 text-[#B45309]" />
-              <span>High Court Title Verified</span>
+              <span>Senior Counsel Diligence Desk</span>
             </div>
             <button
               onClick={onOpenIntakeModal}

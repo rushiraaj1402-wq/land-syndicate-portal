@@ -11,11 +11,11 @@ export const InstitutionalMoat: React.FC<InstitutionalMoatProps> = ({ onScrollTo
       id: 'counsel',
       number: '01',
       pillar: 'Legal Foundation',
-      title: 'Senior Legal Counsel',
-      statement: '32 years of High Court title searches. Zero litigation risk.',
-      detail: 'Rigorous 30+ year revenue chain search across Gujarat High Court and Sub-Registrar records. Every parcel is delivered with certified title clearance, extinguishing co-sharer, minor, and tenancy disputes prior to earnest deposit.',
+      title: 'Senior Legal Counsel (36+ Years Practice • Sanad 1990)',
+      statement: '36+ years of continuous land revenue title practice and encumbrance verification.',
+      detail: 'Exhaustive 30-year Sub-Registrar Index-II search, 7/12 mutation reconstruction, AnyRoR ferfar auditing, and certified clean title clearance certificate before any commercial commitment.',
       icon: <Scale className="w-6 h-6 text-[#B45309]" />,
-      guarantee: 'Zero Post-Closing Injunctions'
+      guarantee: '100% Clear Marketable Title'
     },
     {
       id: 'revenue',

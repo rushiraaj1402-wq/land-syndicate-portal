@@ -13,7 +13,7 @@ export const SyndicateMandates: React.FC<SyndicateMandatesProps> = ({ onScrollTo
       cluster: 'Automotive & EV Tier-1 Cluster',
       acreage: '42.0 Acres',
       type: 'Contiguous Agrarian Consolidation',
-      docket: 'HC-SRCH-2024-GJ-8841',
+      docket: 'SR-AUD-2024-GJ-8841',
       status: 'Executed & Registered',
       year: '2024'
     },
@@ -33,7 +33,7 @@ export const SyndicateMandates: React.FC<SyndicateMandatesProps> = ({ onScrollTo
       cluster: 'Heavy Engineering & Component Assembly',
       acreage: '28.5 Acres',
       type: 'Private Bilateral Acquisition',
-      docket: 'HC-SRCH-2023-MND-412',
+      docket: 'SR-AUD-2023-MND-412',
       status: 'Executed & Registered',
       year: '2023'
     },
@@ -53,7 +53,7 @@ export const SyndicateMandates: React.FC<SyndicateMandatesProps> = ({ onScrollTo
       cluster: 'Export Machinery & Tooling Belt',
       acreage: '20.0 Acres',
       type: 'Section 65 NA Converted Parcel',
-      docket: 'HC-SRCH-2023-MHS-1109',
+      docket: 'SR-AUD-2023-MHS-1109',
       status: 'Executed & Registered',
       year: '2023'
     },
@@ -89,8 +89,8 @@ export const SyndicateMandates: React.FC<SyndicateMandatesProps> = ({ onScrollTo
           </div>
 
           <div className="text-right">
-            <span className="text-xs font-mono text-[#64748B] uppercase block">High Court Audit Standard</span>
-            <span className="text-xs font-mono font-medium text-[#0F172A]">Zero Litigation &bull; Clear Title Registry</span>
+            <span className="text-xs font-mono text-[#64748B] uppercase block">Title Audit Standard</span>
+            <span className="text-xs font-mono font-medium text-[#0F172A]">30-Year Sub-Registrar Title Search &bull; Certified Clear Title</span>
           </div>
         </div>
 
@@ -153,7 +153,7 @@ export const SyndicateMandates: React.FC<SyndicateMandatesProps> = ({ onScrollTo
           <div className="px-6 py-4 bg-[#FAF9F6] border-t border-[#E2DFD7] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
             <div className="flex items-center gap-2 text-[#475569] font-mono text-[11px]">
               <ShieldCheck className="w-4 h-4 text-[#064E3B]" />
-              <span>Certified Gujarat High Court 30-Year Search Docket on file for all completed mandates.</span>
+              <span>Certified Title Audit: 30-Year Sub-Registrar Index-II search dossier on file for all completed mandates.</span>
             </div>
 
             <button

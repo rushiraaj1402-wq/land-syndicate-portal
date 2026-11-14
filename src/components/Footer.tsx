@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
                 LAND SYNDICATE CONSULTING
               </span>
               <span className="text-[#64748B] text-[11px] block font-mono">
-                Gujarat High Court Title Practice & Revenue Advisory Desk &bull; Est. 2012
+                Senior Legal Counsel (36+ Years Practice &bull; Sanad 1990 &bull; Bar Council of Gujarat) &bull; Specialized in Land Revenue Documentation, Title Clearance & Agricultural Law &bull; Est. 2012
               </span>
             </div>
           </div>
@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-6 font-mono text-[11px] text-[#64748B]">
             <span className="flex items-center gap-1.5 text-[#064E3B]">
               <ShieldCheck className="w-3.5 h-3.5 text-[#064E3B]" />
-              32-Year Search Cleared
+              30-Year Continuous Registry Chain
             </span>
             <span className="text-[#CBD5E1]">|</span>
             <span>Section 65 NA Direct Desk</span>
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
               Chambers & Registry
             </h4>
             <p className="text-xs text-[#475569] leading-relaxed">
-              Gujarat High Court Commercial Chambers & SG Highway Institutional Desk, Ahmedabad, Gujarat, India.
+              Senior Legal Counsel Chambers & SG Highway Institutional Desk, Ahmedabad, Gujarat, India.
             </p>
             <div className="text-[11px] font-mono text-[#64748B] pt-1">
               Direct Counsel: +91 99099 23832
