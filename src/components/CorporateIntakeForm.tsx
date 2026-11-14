@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  ShieldCheck, ArrowRight, ArrowLeft, Check, Copy, MessageSquare, 
-  Lock, Building2, CheckCircle2 
+  Check, Copy, MessageSquare, 
+  Lock, CheckCircle2, ArrowRight, ArrowLeft 
 } from 'lucide-react';
+import { 
+  Designation, 
+  AcquisitionPurpose, 
+  AcreageNeeded, 
+  BudgetAllocation 
+} from '../types';
 
 interface CorporateIntakeFormProps {
   initialCorridor?: string;
@@ -13,25 +19,74 @@ interface CorporateIntakeFormProps {
 interface IntakeState {
   companyName: string;
   executiveName: string;
-  designation: string;
+  designation: Designation;
   email: string;
   phone: string;
   corridor: string;
-  acreage: string;
-  purpose: string;
+  acreage: AcreageNeeded;
+  purpose: AcquisitionPurpose;
+  budgetAllocation: BudgetAllocation;
   timeline: string;
   ncndaAgreed: boolean;
 }
 
+const DESIGNATION_OPTIONS: Designation[] = [
+  'Trustee / Family Office',
+  'Managing Director / Promoter',
+  'Chief Financial Officer (CFO)',
+  'Plant / Infrastructure Head',
+  'Principal Investor'
+];
+
+const ACREAGE_OPTIONS: AcreageNeeded[] = [
+  '1 - 3 Acres (4,000 - 12,000 sq.m)',
+  '3 - 5 Acres',
+  '5 - 10 Acres',
+  '10 - 25 Acres',
+  '25 - 50 Acres',
+  '50+ Acres'
+];
+
+const PURPOSE_OPTIONS: AcquisitionPurpose[] = [
+  'Family Trust / Wealth Preservation',
+  'Strategic Land Banking / Appreciation',
+  'Warehousing & Logistics',
+  'Manufacturing & Industrial',
+  'Commercial / Energy'
+];
+
+const BUDGET_OPTIONS: BudgetAllocation[] = [
+  '₹2 - 5 Crores',
+  '₹5 - 10 Crores',
+  '₹10 - 25 Crores',
+  '₹25 - 50 Crores',
+  '₹50+ Crores'
+];
+
+const CORRIDOR_OPTIONS = [
+  'Sanand - Mandal - Becharaji (SMBIR)',
+  'Dholera SIR / Ahmedabad South',
+  'Surendranagar Industrial Corridor',
+  'Mehsana Industrial Belt',
+  'Corridor Agnostic / High Feasibility'
+];
+
+const TIMELINE_OPTIONS = [
+  'Immediate (0 - 30 Days)',
+  'Q1 Target (1 - 3 Months)',
+  'Strategic Pipeline (3 - 6 Months)'
+];
+
 const INITIAL_STATE: IntakeState = {
   companyName: '',
   executiveName: '',
-  designation: 'CFO',
+  designation: 'Managing Director / Promoter',
   email: '',
   phone: '',
   corridor: 'Sanand - Mandal - Becharaji (SMBIR)',
-  acreage: '10 - 25 Acres',
-  purpose: 'Automotive & Ancillary',
+  acreage: '1 - 3 Acres (4,000 - 12,000 sq.m)',
+  purpose: 'Strategic Land Banking / Appreciation',
+  budgetAllocation: '₹2 - 5 Crores',
   timeline: 'Immediate (0 - 30 Days)',
   ncndaAgreed: true
 };
@@ -69,9 +124,9 @@ export const CorporateIntakeForm: React.FC<CorporateIntakeFormProps> = ({
 
   const validateStep1 = () => {
     const errs: Record<string, string> = {};
-    if (!formData.companyName.trim()) errs.companyName = 'Corporate entity name required';
-    if (!formData.executiveName.trim()) errs.executiveName = 'Executive name required';
-    if (!formData.email.trim() || !formData.email.includes('@')) errs.email = 'Corporate email required';
+    if (!formData.companyName.trim()) errs.companyName = 'Entity / Family Trust / Corporate name required';
+    if (!formData.executiveName.trim()) errs.executiveName = 'Authorized signatory or trustee name required';
+    if (!formData.email.trim() || !formData.email.includes('@')) errs.email = 'Valid corporate or family office email required';
     if (!formData.phone.trim() || formData.phone.length < 10) errs.phone = 'Direct telephone / mobile required';
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -95,19 +150,20 @@ export const CorporateIntakeForm: React.FC<CorporateIntakeFormProps> = ({
   };
 
   const generateDossierText = () => {
-    return `*LAND SYNDICATE CONSULTING - CORPORATE MANDATE*
+    return `*LAND SYNDICATE CONSULTING — ACQUISITION MANDATE*
 Reference: ${referenceId || 'LSC-DIRECT-APPLICATION'}
 ----------------------------------------
 *1. Executive & Entity Identification*
-- Corporate Entity: ${formData.companyName}
-- Signatory: ${formData.executiveName} (${formData.designation})
-- Corporate Email: ${formData.email}
-- Direct Telephone: ${formData.phone}
+- Mandate Entity: ${formData.companyName}
+- Signatory / Principal: ${formData.executiveName} (${formData.designation})
+- Direct Email: ${formData.email}
+- Contact Phone: ${formData.phone}
 
-*2. Land Parameters*
+*2. Land & Capital Parameters*
 - Target Corridor: ${formData.corridor}
-- Target Contiguous Acreage: ${formData.acreage}
-- Industrial Purpose: ${formData.purpose}
+- Target Land Extent: ${formData.acreage}
+- Acquisition Purpose: ${formData.purpose}
+- Budget Allocation: ${formData.budgetAllocation}
 - Execution Window: ${formData.timeline}
 
 *3. Confidentiality Protocol*
@@ -140,10 +196,10 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
           <span className="text-[11px] font-mono text-[#64748B]">Bilateral NCNDA Mandate</span>
         </div>
         <h3 className="font-serif-institutional text-2xl sm:text-3xl font-bold text-[#0F172A]">
-          Submit Corporate Land Mandate
+          Initiate Land Acquisition Mandate &mdash; Corporate Manufacturing, Family Trusts & Private Wealth
         </h3>
-        <p className="text-xs sm:text-sm text-[#475569] mt-1 font-light">
-          Audited survey records and pre-vetted agrarian options are dispatched strictly to authorized corporate promoters, CFOs, and plant heads.
+        <p className="text-xs sm:text-sm text-[#475569] mt-2 font-light">
+          Audited survey records and pre-vetted agrarian parcels are dispatched strictly to authorized corporate promoters, family trustees, CFOs, and principal investors.
         </p>
       </div>
 
@@ -171,7 +227,7 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
             }`}
           >
             <span className="w-5 h-5 rounded-full bg-[#FAF9F6] border border-[#E2DFD7] flex items-center justify-center text-[10px]">2</span>
-            <span>Acreage & Verification</span>
+            <span>Scale, Purpose & Budget</span>
           </button>
         </div>
       )}
@@ -182,13 +238,13 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-mono uppercase tracking-wider text-[#334155] mb-1.5">
-                Corporate Entity / Company Name *
+                Entity / Family Trust / Corporate Name *
               </label>
               <input
                 type="text"
                 value={formData.companyName}
                 onChange={(e) => updateField('companyName', e.target.value)}
-                placeholder="e.g. Apex Engineering Ltd"
+                placeholder="e.g. Mehta Family Trust or Apex Infra Ltd"
                 className={`w-full px-3.5 py-2.5 bg-[#FFFFFF] border rounded-xs text-sm text-[#0F172A] placeholder-[#94A3B8] focus:outline-none focus:ring-1 focus:ring-[#0F172A] transition-colors ${
                   errors.companyName ? 'border-red-500' : 'border-[#CBD5E1]'
                 }`}
@@ -198,7 +254,7 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
 
             <div>
               <label className="block text-xs font-mono uppercase tracking-wider text-[#334155] mb-1.5">
-                Authorized Executive Name *
+                Signatory / Trustee / Principal Name *
               </label>
               <input
                 type="text"
@@ -216,30 +272,28 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
               <label className="block text-xs font-mono uppercase tracking-wider text-[#334155] mb-1.5">
-                Designation
+                Signatory Designation / Role
               </label>
               <select
                 value={formData.designation}
-                onChange={(e) => updateField('designation', e.target.value)}
+                onChange={(e) => updateField('designation', e.target.value as Designation)}
                 className="w-full px-3.5 py-2.5 bg-[#FFFFFF] border border-[#CBD5E1] rounded-xs text-sm text-[#0F172A] focus:outline-none focus:ring-1 focus:ring-[#0F172A]"
               >
-                <option value="CFO">Chief Financial Officer (CFO)</option>
-                <option value="Managing Director">Managing Director / Promoter</option>
-                <option value="Plant Head">Plant Head / VP Projects</option>
-                <option value="Corporate Strategy">Corporate Strategy Head</option>
-                <option value="Legal Counsel">General Counsel / Legal Head</option>
+                {DESIGNATION_OPTIONS.map((opt) => (
+                  <option key={opt} value={opt}>{opt}</option>
+                ))}
               </select>
             </div>
 
             <div>
               <label className="block text-xs font-mono uppercase tracking-wider text-[#334155] mb-1.5">
-                Corporate Email *
+                Email Address *
               </label>
               <input
                 type="email"
                 value={formData.email}
                 onChange={(e) => updateField('email', e.target.value)}
-                placeholder="exec@company.com"
+                placeholder="principal@familyoffice.in"
                 className={`w-full px-3.5 py-2.5 bg-[#FFFFFF] border rounded-xs text-sm text-[#0F172A] placeholder-[#94A3B8] focus:outline-none focus:ring-1 focus:ring-[#0F172A] transition-colors ${
                   errors.email ? 'border-red-500' : 'border-[#CBD5E1]'
                 }`}
@@ -249,7 +303,7 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
 
             <div>
               <label className="block text-xs font-mono uppercase tracking-wider text-[#334155] mb-1.5">
-                Direct Mobile / Phone *
+                Direct Mobile / WhatsApp *
               </label>
               <input
                 type="tel"
@@ -266,18 +320,16 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
 
           <div>
             <label className="block text-xs font-mono uppercase tracking-wider text-[#334155] mb-1.5">
-              Preferred Gujarat Industrial Corridor
+              Preferred Gujarat Corridor
             </label>
             <select
               value={formData.corridor}
               onChange={(e) => updateField('corridor', e.target.value)}
               className="w-full px-3.5 py-2.5 bg-[#FFFFFF] border border-[#CBD5E1] rounded-xs text-sm text-[#0F172A] focus:outline-none focus:ring-1 focus:ring-[#0F172A]"
             >
-              <option value="Sanand - Mandal - Becharaji (SMBIR)">Sanand - Mandal - Becharaji (SMBIR Automotive Belt)</option>
-              <option value="Dholera SIR / Ahmedabad South">Dholera SIR / Ahmedabad South (DMIC & Logistics Spine)</option>
-              <option value="Surendranagar Industrial Corridor">Surendranagar Industrial Corridor (Heavy Manufacturing & NH-47)</option>
-              <option value="Mehsana Industrial Belt">Mehsana Industrial Belt (Precision Machinery & Export WDFC)</option>
-              <option value="Multi-Corridor Feasibility">Multi-Corridor Feasibility (Syndicate Discretion)</option>
+              {CORRIDOR_OPTIONS.map((c) => (
+                <option key={c} value={c}>{c}</option>
+              ))}
             </select>
           </div>
 
@@ -294,56 +346,71 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
         </div>
       )}
 
-      {/* STEP 2: LAND PARAMETERS & NCNDA */}
+      {/* STEP 2: LAND PARAMETERS, BUDGET & NCNDA */}
       {step === 2 && (
         <div className="space-y-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-mono uppercase tracking-wider text-[#334155] mb-1.5">
-                Target Contiguous Acreage
+                Target Acreage / Land Extent
               </label>
               <select
                 value={formData.acreage}
-                onChange={(e) => updateField('acreage', e.target.value)}
+                onChange={(e) => updateField('acreage', e.target.value as AcreageNeeded)}
                 className="w-full px-3.5 py-2.5 bg-[#FFFFFF] border border-[#CBD5E1] rounded-xs text-sm text-[#0F172A] focus:outline-none focus:ring-1 focus:ring-[#0F172A]"
               >
-                <option value="10 - 25 Acres">10 - 25 Acres (Standard Industrial Unit)</option>
-                <option value="25 - 50 Acres">25 - 50 Acres (Large Manufacturing Facility)</option>
-                <option value="50+ Acres (Anchor Parcel)">50+ Acres (Anchor Facility / Logistics Mega-Park)</option>
+                {ACREAGE_OPTIONS.map((a) => (
+                  <option key={a} value={a}>{a}</option>
+                ))}
               </select>
             </div>
 
             <div>
               <label className="block text-xs font-mono uppercase tracking-wider text-[#334155] mb-1.5">
-                Primary Industrial Purpose
+                Acquisition Purpose
               </label>
               <select
                 value={formData.purpose}
-                onChange={(e) => updateField('purpose', e.target.value)}
+                onChange={(e) => updateField('purpose', e.target.value as AcquisitionPurpose)}
                 className="w-full px-3.5 py-2.5 bg-[#FFFFFF] border border-[#CBD5E1] rounded-xs text-sm text-[#0F172A] focus:outline-none focus:ring-1 focus:ring-[#0F172A]"
               >
-                <option value="Automotive & Ancillary">Automotive & Ancillary Assembly</option>
-                <option value="Heavy Engineering">Heavy Engineering & Forging</option>
-                <option value="Warehousing & Logistics">Warehousing & Multimodal Logistics</option>
-                <option value="Electronics & Semiconductor">Electronics & Semiconductor Ancillary</option>
-                <option value="Chemical & Clean Tech">Chemical & Clean Energy Storage</option>
+                {PURPOSE_OPTIONS.map((p) => (
+                  <option key={p} value={p}>{p}</option>
+                ))}
               </select>
             </div>
           </div>
 
-          <div>
-            <label className="block text-xs font-mono uppercase tracking-wider text-[#334155] mb-1.5">
-              Execution Horizon
-            </label>
-            <select
-              value={formData.timeline}
-              onChange={(e) => updateField('timeline', e.target.value)}
-              className="w-full px-3.5 py-2.5 bg-[#FFFFFF] border border-[#CBD5E1] rounded-xs text-sm text-[#0F172A] focus:outline-none focus:ring-1 focus:ring-[#0F172A]"
-            >
-              <option value="Immediate (0 - 30 Days)">Immediate Acquisition (0 - 30 Days)</option>
-              <option value="Q1 Target (1 - 3 Months)">Q1 Target (1 - 3 Months)</option>
-              <option value="Strategic Pipeline (3 - 6 Months)">Strategic Pipeline (3 - 6 Months)</option>
-            </select>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-mono uppercase tracking-wider text-[#334155] mb-1.5">
+                Budget Allocation
+              </label>
+              <select
+                value={formData.budgetAllocation}
+                onChange={(e) => updateField('budgetAllocation', e.target.value as BudgetAllocation)}
+                className="w-full px-3.5 py-2.5 bg-[#FFFFFF] border border-[#CBD5E1] rounded-xs text-sm text-[#0F172A] focus:outline-none focus:ring-1 focus:ring-[#0F172A]"
+              >
+                {BUDGET_OPTIONS.map((b) => (
+                  <option key={b} value={b}>{b}</option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-xs font-mono uppercase tracking-wider text-[#334155] mb-1.5">
+                Execution Horizon
+              </label>
+              <select
+                value={formData.timeline}
+                onChange={(e) => updateField('timeline', e.target.value)}
+                className="w-full px-3.5 py-2.5 bg-[#FFFFFF] border border-[#CBD5E1] rounded-xs text-sm text-[#0F172A] focus:outline-none focus:ring-1 focus:ring-[#0F172A]"
+              >
+                {TIMELINE_OPTIONS.map((t) => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
+              </select>
+            </div>
           </div>
 
           {/* NCNDA Agreement Box */}
@@ -356,7 +423,7 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
                 className="mt-1 h-4 w-4 rounded border-[#CBD5E1] text-[#0F172A] focus:ring-[#0F172A]"
               />
               <span className="text-xs text-[#334155] leading-relaxed">
-                <strong className="text-[#0F172A]">Syndicate Bilateral NCNDA Confirmation:</strong> I confirm this mandate is initiated on behalf of an authorized corporate principal. All off-market survey details and title search certificates shared by Land Syndicate Consulting shall remain strictly confidential under Gujarat High Court advisory jurisdiction.
+                <strong className="text-[#0F172A]">Syndicate Bilateral NCNDA Confirmation:</strong> I confirm this mandate is initiated on behalf of an authorized corporate principal, family trust, or private investor. All off-market survey details and title search certificates shared by Land Syndicate Consulting shall remain strictly confidential under Gujarat High Court advisory jurisdiction.
               </span>
             </label>
             {errors.ncndaAgreed && <p className="text-[11px] text-red-600 mt-2">{errors.ncndaAgreed}</p>}
@@ -377,7 +444,7 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
               onClick={handleNext}
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#0F172A] hover:bg-[#1E293B] text-white text-xs font-semibold uppercase tracking-wider rounded-xs transition-colors"
             >
-              <span>Transmit Corporate Mandate</span>
+              <span>Transmit Mandate Dossier</span>
               <Check className="w-4 h-4 text-emerald-400" />
             </button>
           </div>
@@ -400,7 +467,7 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
                   Reference: {referenceId}
                 </h4>
                 <p className="text-xs text-[#334155] mt-1">
-                  Your mandate has been compiled according to Gujarat High Court & Revenue title protocols. Proceed to dispatch directly to Counsel or copy the formatted dossier.
+                  Your acquisition mandate has been registered according to Gujarat High Court & Revenue title protocols. Proceed to dispatch directly to Senior Counsel or copy the formatted dossier.
                 </p>
               </div>
             </div>
@@ -426,7 +493,7 @@ Transmitted directly to Syndicate Legal & Revenue Desk.`;
               className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#FFFFFF] hover:bg-[#F4F2EE] text-[#0F172A] border border-[#E2DFD7] text-xs font-mono uppercase tracking-wider rounded-xs transition-colors"
             >
               {copied ? <CheckCircle2 className="w-4 h-4 text-[#064E3B]" /> : <Copy className="w-4 h-4 text-[#475569]" />}
-              <span>{copied ? 'Dossier Copied' : 'Copy Mandate'}</span>
+              <span>{copied ? 'Dossier Copied' : 'Copy Mandate Dossier'}</span>
             </button>
 
             {isModal && onSuccessClose && (

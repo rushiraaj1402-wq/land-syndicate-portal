@@ -34,21 +34,55 @@ export interface AuditStep {
   deliverables: string[];
 }
 
+export type Designation =
+  | 'Trustee / Family Office'
+  | 'Managing Director / Promoter'
+  | 'Chief Financial Officer (CFO)'
+  | 'Plant / Infrastructure Head'
+  | 'Principal Investor';
+
+export type AcquisitionPurpose =
+  | 'Family Trust / Wealth Preservation'
+  | 'Strategic Land Banking / Appreciation'
+  | 'Warehousing & Logistics'
+  | 'Manufacturing & Industrial'
+  | 'Commercial / Energy';
+
+export type AcreageNeeded =
+  | '1 - 3 Acres (4,000 - 12,000 sq.m)'
+  | '3 - 5 Acres'
+  | '5 - 10 Acres'
+  | '10 - 25 Acres'
+  | '25 - 50 Acres'
+  | '50+ Acres';
+
+export type BudgetAllocation =
+  | '₹2 - 5 Crores'
+  | '₹5 - 10 Crores'
+  | '₹10 - 25 Crores'
+  | '₹25 - 50 Crores'
+  | '₹50+ Crores';
+
 export interface CorporateIntakeData {
   // Step 1: Entity & Executive Identity
   companyName: string;
   executiveName: string;
-  designation: 'CFO' | 'Managing Director' | 'Plant Head' | 'Corporate Strategy Head' | 'Other';
+  designation: Designation;
   cinGstin: string;
   hqCity: string;
   email: string;
   directPhone: string;
 
   // Step 2: Land Parameters
-  purpose: 'Automotive & Ancillary' | 'Heavy Engineering' | 'Warehousing & Logistics' | 'Chemical & Pharma (GIDC/PCPIR)' | 'Renewable & Green Hydrogen' | 'Other Industrial';
-  acreageNeeded: '5 - 10 Acres' | '10 - 25 Acres' | '25 - 50 Acres' | '50+ Acres (Anchor Parcel)';
-  preferredCorridor: 'Sanand - Mandal - Becharaji (SMBIR)' | 'Dholera SIR / Ahmedabad South' | 'Surendranagar Industrial Corridor' | 'Mehsana Industrial Belt' | 'Corridor Agnostic / High Feasibility';
-  budgetAllocation: '₹5 - 10 Crores' | '₹10 - 25 Crores' | '₹25 - 50 Crores' | '₹50+ Crores';
+  purpose: AcquisitionPurpose;
+  acreageNeeded: AcreageNeeded;
+  preferredCorridor:
+    | 'Sanand - Mandal - Becharaji (SMBIR)'
+    | 'Dholera SIR / Ahmedabad South'
+    | 'Surendranagar Industrial Corridor'
+    | 'Mehsana Industrial Belt'
+    | 'Corridor Agnostic / High Feasibility';
+  budgetAllocation: BudgetAllocation;
 
   // Step 3: Execution Timeline & Syndicate Protocol Acceptance
   executionTimeline: 'Immediate (0 - 30 Days)' | 'Q1 Target (1 - 3 Months)' | 'Strategic Pipeline (3 - 6 Months)';

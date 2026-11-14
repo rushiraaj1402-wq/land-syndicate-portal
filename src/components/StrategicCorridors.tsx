@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, MapPin, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, MapPin, CheckCircle2, Layers } from 'lucide-react';
 
 interface StrategicCorridorsProps {
   onSelectCorridor: (corridorName: string) => void;
@@ -12,7 +12,7 @@ export const StrategicCorridors: React.FC<StrategicCorridorsProps> = ({ onSelect
       name: 'Sanand',
       focus: 'Automotive & EV Ecosystem',
       fullName: 'Sanand - Mandal - Becharaji (SMBIR)',
-      keyStat: '15 – 60 Acres Contiguous',
+      scaleLabel: 'Micro (4,000 - 12,000 sq.m) to Mega (60 Acres)',
       connectivity: 'SH-17 Expressway & Viramgam Logistics Hub',
       statutory: 'Section 65 NA Pre-Audited',
       badge: 'Tier-1 Auto Belt'
@@ -22,7 +22,7 @@ export const StrategicCorridors: React.FC<StrategicCorridorsProps> = ({ onSelect
       name: 'Dholera SIR',
       focus: 'DMIC Logistics & Electronics',
       fullName: 'Dholera SIR / Ahmedabad South',
-      keyStat: '20 – 100+ Acres Contiguous',
+      scaleLabel: 'Micro (5,000 - 15,000 sq.m) to Mega (100+ Acres)',
       connectivity: 'Ahmedabad-Dholera Expressway & Cargo Airport',
       statutory: 'Master Plan TP Scheme Cleared',
       badge: 'Greenfield Megacity'
@@ -32,7 +32,7 @@ export const StrategicCorridors: React.FC<StrategicCorridorsProps> = ({ onSelect
       name: 'Surendranagar',
       focus: 'Heavy Manufacturing & Forging',
       fullName: 'Surendranagar Industrial Corridor',
-      keyStat: '10 – 45 Acres Contiguous',
+      scaleLabel: 'Micro (4,000 - 12,000 sq.m) to Mega (45 Acres)',
       connectivity: 'NH-47 Spine & Saurashtra Port Access',
       statutory: 'Zero Tenancy Dispute Pre-Vetted',
       badge: 'Manufacturing Hub'
@@ -42,7 +42,7 @@ export const StrategicCorridors: React.FC<StrategicCorridorsProps> = ({ onSelect
       name: 'Mehsana',
       focus: 'Precision Engineering & Export',
       fullName: 'Mehsana Industrial Belt',
-      keyStat: '10 – 35 Acres Contiguous',
+      scaleLabel: 'Micro (4,000 - 12,000 sq.m) to Mega (35 Acres)',
       connectivity: 'WDFC Dedicated Freight Siding & SH-41',
       statutory: '32-Year Clean Title Chain',
       badge: 'Machinery Corridor'
@@ -64,7 +64,7 @@ export const StrategicCorridors: React.FC<StrategicCorridorsProps> = ({ onSelect
               Strategic Gujarat Corridors
             </h2>
             <p className="text-[#475569] text-base sm:text-lg font-light mt-3">
-              Prime manufacturing and warehousing belts with confirmed infrastructure, high-voltage industrial power, and clean legal tenure.
+              Prime belts structured for both <span className="font-medium text-[#0F172A]">Micro-Industrial & Land Banking parcels (4,000 &ndash; 12,000 sq.m / 1 to 3 Acres)</span> and <span className="font-medium text-[#0F172A]">Mega Contiguous Parcels (10 to 50+ Acres)</span> with confirmed infrastructure, high-voltage industrial power, and clean legal tenure.
             </p>
           </div>
 
@@ -100,8 +100,13 @@ export const StrategicCorridors: React.FC<StrategicCorridorsProps> = ({ onSelect
 
                 {/* Core Parcel Metric */}
                 <div className="py-2.5 px-3 rounded-xs bg-[#FAF9F6] border border-[#E2DFD7] text-xs font-mono mb-4">
-                  <span className="text-[#64748B] block text-[10px] uppercase tracking-wider">Available Scale:</span>
-                  <span className="font-semibold text-[#0F172A] text-sm">{c.keyStat}</span>
+                  <div className="flex items-center gap-1.5 mb-1 text-[10px] uppercase tracking-wider text-[#64748B]">
+                    <Layers className="w-3 h-3 text-[#B45309]" />
+                    <span>Available Scale:</span>
+                  </div>
+                  <span className="font-semibold text-[#0F172A] text-xs leading-snug block">
+                    {c.scaleLabel}
+                  </span>
                 </div>
 
                 {/* Infrastructure Details */}
@@ -127,6 +132,17 @@ export const StrategicCorridors: React.FC<StrategicCorridorsProps> = ({ onSelect
               </button>
             </div>
           ))}
+        </div>
+
+        {/* Dual Scale Clarification Banner */}
+        <div className="mt-8 p-4 bg-[#FFFFFF] border border-[#E2DFD7] rounded-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs font-mono">
+          <div className="flex items-center gap-2.5 text-[#334155]">
+            <span className="w-2 h-2 rounded-full bg-[#B45309]" />
+            <span>
+              <strong>Dual Mandate Provisioning:</strong> Support for both Micro-Industrial & Land Banking parcels (4,000 &ndash; 12,000 sq.m / 1 to 3 Acres) and Mega Contiguous Parcels (10 to 50+ Acres).
+            </span>
+          </div>
+          <span className="text-[#64748B] shrink-0">Bona Fide Industrial & Section 63 Protected</span>
         </div>
 
       </div>

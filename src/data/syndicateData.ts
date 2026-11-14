@@ -203,7 +203,7 @@ export const INSTITUTIONAL_PILLARS = [
     id: 'farmer-holding',
     title: 'Strict In-House Farmer Certificate Holding',
     subtitle: 'Proprietary Acquisition Structure',
-    description: 'Corporate buyers cannot acquire agricultural land in Gujarat without complex, risky escrow arrangements. LSC maintains legitimate, multi-generational Gujarat agricultural status, enabling direct, lawful land assembly before industrial conversion.',
+    description: 'Corporate buyers and family trusts cannot acquire agricultural land in Gujarat without complex, risky escrow arrangements. Our internal farmer certificate status lawful bridge protects both 50-acre corporate plants and 1-to-3 acre private family trust land banks against Section 63 tenancy hurdles, enabling direct, lawful land assembly before industrial conversion.',
     badge: 'Direct Agrarian Holding',
     metrics: 'Eliminates Broker Escrow Exposure',
     keyPoints: [

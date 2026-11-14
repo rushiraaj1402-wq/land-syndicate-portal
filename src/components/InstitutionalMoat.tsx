@@ -23,7 +23,7 @@ export const InstitutionalMoat: React.FC<InstitutionalMoatProps> = ({ onScrollTo
       pillar: 'Statutory Liaison',
       title: 'Revenue & NA Desk',
       statement: 'Direct liaison for fast-track Section 65 NA and Section 63AA industrial clearance.',
-      detail: 'Direct administrative interface with Collectorates, Prant officers, and Talati revenue desks. Expedited processing of Section 65 Non-Agricultural conversion and Section 63AA permissions for large corporate and manufacturing setups.',
+      detail: 'Direct administrative interface with Collectorates, Prant officers, and Talati revenue desks. Expedited processing of Section 65 Non-Agricultural conversion and Section 63AA permissions for large corporate setups and strategic land banking parcels.',
       icon: <Landmark className="w-6 h-6 text-[#B45309]" />,
       guarantee: 'Fast-Track Collectorate Processing'
     },
@@ -32,8 +32,8 @@ export const InstitutionalMoat: React.FC<InstitutionalMoatProps> = ({ onScrollTo
       number: '03',
       pillar: 'Proprietary Standing',
       title: 'Agrarian Consolidation',
-      statement: 'Lawful consolidation of 10 to 50+ acre contiguous parcels through internal farmer status.',
-      detail: 'In-house certified farmer status enables compliant direct assembly of fragmented agricultural smallholdings into single contiguous blocks, entirely bypassing intermediary brokers and speculative price inflation.',
+      statement: 'Lawful acquisition and consolidation of 1 to 50+ acre parcels through verified internal farmer status.',
+      detail: 'Our internal farmer certificate status lawful bridge protects both 50-acre corporate plants and 1-to-3 acre private family trust land banks against Section 63 tenancy hurdles. Enables direct, compliant landholding and consolidation, entirely bypassing intermediary brokers and speculative price inflation.',
       icon: <ShieldCheck className="w-6 h-6 text-[#B45309]" />,
       guarantee: 'Direct Bilateral Acquisition'
     }
@@ -50,10 +50,10 @@ export const InstitutionalMoat: React.FC<InstitutionalMoatProps> = ({ onScrollTo
             <span>The Syndicate Moat</span>
           </div>
           <h2 className="font-serif-institutional text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] tracking-tight mb-4">
-            Three Structural Guarantees for Institutional Capital.
+            Three Structural Guarantees for Institutional & Private Capital.
           </h2>
           <p className="text-[#475569] text-base sm:text-lg font-light leading-relaxed">
-            Acquiring strategic industrial land in Gujarat requires eliminating title vulnerabilities, statutory delays, and speculative markups before earnest capital is deployed.
+            Acquiring strategic industrial land and wealth-preservation parcels in Gujarat requires eliminating title vulnerabilities, statutory delays, and speculative markups before earnest capital is deployed.
           </p>
         </div>
 
@@ -108,7 +108,7 @@ export const InstitutionalMoat: React.FC<InstitutionalMoatProps> = ({ onScrollTo
           <div className="flex items-center gap-3">
             <div className="w-2.5 h-2.5 rounded-full bg-[#B45309]" />
             <p className="text-xs sm:text-sm text-[#334155]">
-              <strong className="text-[#0F172A]">Direct Syndicate Execution:</strong> We work directly with promoters and institutional finance desks under bilateral NCNDA.
+              <strong className="text-[#0F172A]">Direct Syndicate Execution:</strong> We work directly with promoters, family trusts, and private investment offices under bilateral NCNDA.
             </p>
           </div>
           <button
