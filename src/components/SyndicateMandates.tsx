@@ -1,71 +1,96 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle2, ArrowUpRight, FileText } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, ArrowUpRight, Clock } from 'lucide-react';
 
 interface SyndicateMandatesProps {
   onScrollToIntake: () => void;
 }
 
+interface MandateEntry {
+  id: string;
+  location: string;
+  cluster: string;
+  acreage: string;
+  type: string;
+  docket: string;
+  status: string;
+  subtext: string;
+  year: string;
+  stageColor: 'blue' | 'amber' | 'emerald';
+}
+
 export const SyndicateMandates: React.FC<SyndicateMandatesProps> = ({ onScrollToIntake }) => {
-  const executedTransactions = [
+  const executedTransactions: MandateEntry[] = [
     {
       id: 'm-1',
-      location: 'Sanand Industrial Belt (SMBIR SH-17 Axis)',
+      location: 'Sanand SMBIR Auto Tier-1 Hub',
       cluster: 'Automotive & EV Tier-1 Cluster',
       acreage: '42.0 Acres',
       type: 'Contiguous Agrarian Consolidation',
-      docket: 'SR-AUD-2024-GJ-8841',
-      status: 'Executed & Registered',
-      year: '2024'
+      docket: 'SR-AUD-2026-GJ-9104',
+      status: 'Public Notice Active (Sandesh/Gujarat Samachar)',
+      subtext: '14-Day Statutory Notice Running (Q3 2026) • Zero Objections',
+      year: '2026 (Q3)',
+      stageColor: 'blue'
     },
     {
       id: 'm-2',
-      location: 'Dholera SIR Logistics Outer Ring',
+      location: 'Dholera SIR Logistics & Electronics Mega Park',
       cluster: 'DMIC Freight & Warehousing Corridor',
       acreage: '65.0 Acres',
       type: 'Industrial Logistics Master Plan',
-      docket: 'LSC-AUD-DLR-0922',
-      status: 'Executed & Registered',
-      year: '2024'
+      docket: 'SR-AUD-2026-DHL-2109',
+      status: 'Registered Banakhat Executed (Under Section 65 NA Clearance)',
+      subtext: 'Under Section 65 NA Clearance • 45m DP Road Connected',
+      year: '2026 (Q2)',
+      stageColor: 'amber'
     },
     {
       id: 'm-3',
-      location: 'Mandal Auto Cluster Perimeter',
+      location: 'Mandal Industrial Region (EV Battery Vendor Campus)',
       cluster: 'Heavy Engineering & Component Assembly',
       acreage: '28.5 Acres',
       type: 'Private Bilateral Acquisition',
-      docket: 'SR-AUD-2023-MND-412',
-      status: 'Executed & Registered',
-      year: '2023'
+      docket: 'SR-AUD-2025-MND-4812',
+      status: 'Title Certified • Sub-Registrar Registry Scheduled',
+      subtext: 'Section 65 NA Complete • SDM Sanctioned (Q4 2025)',
+      year: '2025 (Q4)',
+      stageColor: 'amber'
     },
     {
       id: 'm-4',
-      location: 'Surendranagar Freight Corridor (NH-47)',
+      location: 'Surendranagar Freight Corridor (Heavy Forging Facility)',
       cluster: 'Forging, Minerals & Agro-Logistics',
       acreage: '35.0 Acres',
       type: 'Contiguous Agrarian Consolidation',
-      docket: 'LSC-AUD-SNGR-7014',
-      status: 'Executed & Registered',
-      year: '2023'
+      docket: 'SR-AUD-2025-SNGR-3310',
+      status: 'Executed & Registered • Title Transferred',
+      subtext: 'Closed 2025 (Q3) • High-Tension Feeder Approved',
+      year: '2025 (Q3)',
+      stageColor: 'emerald'
     },
     {
       id: 'm-5',
-      location: 'Mehsana Precision Engineering Park',
+      location: 'Mehsana Engineering & Agro Export Park',
       cluster: 'Export Machinery & Tooling Belt',
       acreage: '20.0 Acres',
       type: 'Section 65 NA Converted Parcel',
-      docket: 'SR-AUD-2023-MHS-1109',
-      status: 'Executed & Registered',
-      year: '2023'
+      docket: 'SR-AUD-2025-MHS-1944',
+      status: 'Executed & Registered • Title Transferred',
+      subtext: 'Closed 2025 (Q2) • Rail Siding Feasibility Secured',
+      year: '2025 (Q2)',
+      stageColor: 'emerald'
     },
     {
       id: 'm-6',
-      location: 'Viramgam Multimodal Logistics Node',
+      location: 'Viramgam Multi-Modal Warehousing Spine',
       cluster: 'Rail-Siding Logistics & ICD Spine',
       acreage: '50.0 Acres',
       type: 'Contiguous Bilateral Aggregation',
-      docket: 'LSC-AUD-VRG-3208',
-      status: 'Executed & Registered',
-      year: '2022'
+      docket: 'SR-AUD-2025-VRG-3208',
+      status: 'Executed & Registered • Title Transferred',
+      subtext: 'Closed 2025 (Q1) • Clear Agrarian Chain Certified',
+      year: '2025 (Q1)',
+      stageColor: 'emerald'
     }
   ];
 
@@ -78,13 +103,13 @@ export const SyndicateMandates: React.FC<SyndicateMandatesProps> = ({ onScrollTo
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#FFFFFF] border border-[#E2DFD7] text-[#0F172A] text-xs font-mono uppercase tracking-wider mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[#064E3B]" />
-              <span>Track Record</span>
+              <span>Track Record & Active Pipeline</span>
             </div>
             <h2 className="font-serif-institutional text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] tracking-tight">
-              Recent Executed Mandates
+              Recent Syndicate Mandates
             </h2>
             <p className="text-[#475569] text-base sm:text-lg font-light mt-3">
-              Representative institutional land consolidations executed under our proprietary agrarian holding protocol.
+              Representative institutional land consolidations and live transaction pipeline executed under our proprietary agrarian holding protocol.
             </p>
           </div>
 
@@ -99,9 +124,9 @@ export const SyndicateMandates: React.FC<SyndicateMandatesProps> = ({ onScrollTo
           
           {/* Table Header */}
           <div className="grid grid-cols-12 px-6 py-4 bg-[#FAF9F6] border-b border-[#E2DFD7] text-[11px] font-mono uppercase tracking-wider text-[#64748B]">
-            <div className="col-span-12 sm:col-span-6 md:col-span-6">Location & Industrial Cluster</div>
+            <div className="col-span-12 sm:col-span-5 md:col-span-5">Location & Industrial Cluster</div>
             <div className="hidden sm:block sm:col-span-3 md:col-span-3">Acreage Consolidated</div>
-            <div className="hidden sm:block sm:col-span-3 md:col-span-3 text-right">Status & Clearance</div>
+            <div className="hidden sm:block sm:col-span-4 md:col-span-4 text-right">Pipeline Status & Statutory Clearance</div>
           </div>
 
           {/* Ledger Rows */}
@@ -112,7 +137,7 @@ export const SyndicateMandates: React.FC<SyndicateMandatesProps> = ({ onScrollTo
                 className="grid grid-cols-12 px-6 py-5 hover:bg-[#FAF9F6]/80 transition-colors items-center gap-2 sm:gap-0"
               >
                 {/* Column 1: Location */}
-                <div className="col-span-12 sm:col-span-6 md:col-span-6">
+                <div className="col-span-12 sm:col-span-5 md:col-span-5">
                   <div className="flex items-center gap-2">
                     <span className="font-serif-institutional font-bold text-[#0F172A] text-base sm:text-lg">
                       {tx.location}
@@ -136,13 +161,23 @@ export const SyndicateMandates: React.FC<SyndicateMandatesProps> = ({ onScrollTo
                 </div>
 
                 {/* Column 3: Status */}
-                <div className="col-span-6 sm:col-span-3 md:col-span-3 text-right mt-2 sm:mt-0 flex flex-col sm:items-end justify-center">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xs bg-[#F0FDF4] border border-[#BBF7D0] text-[#064E3B] text-xs font-mono font-medium tracking-wide">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#064E3B]" />
+                <div className="col-span-6 sm:col-span-4 md:col-span-4 text-right mt-2 sm:mt-0 flex flex-col sm:items-end justify-center">
+                  <span
+                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xs text-[11px] font-mono font-medium tracking-tight border ${
+                      tx.stageColor === 'blue'
+                        ? 'bg-[#EFF6FF] border-[#BFDBFE] text-[#1E40AF]'
+                        : tx.stageColor === 'amber'
+                        ? 'bg-[#FFFBEB] border-[#FDE68A] text-[#92400E]'
+                        : 'bg-[#F0FDF4] border-[#BBF7D0] text-[#064E3B]'
+                    }`}
+                  >
+                    {tx.stageColor === 'blue' && <Clock className="w-3.5 h-3.5 text-[#1E40AF] shrink-0" />}
+                    {tx.stageColor === 'amber' && <Clock className="w-3.5 h-3.5 text-[#92400E] shrink-0" />}
+                    {tx.stageColor === 'emerald' && <CheckCircle2 className="w-3.5 h-3.5 text-[#064E3B] shrink-0" />}
                     <span>{tx.status}</span>
                   </span>
                   <span className="text-[10px] font-mono text-[#94A3B8] mt-1">
-                    Closed {tx.year} &bull; Unencumbered Title
+                    {tx.subtext}
                   </span>
                 </div>
               </div>
